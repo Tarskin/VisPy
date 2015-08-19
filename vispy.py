@@ -14,11 +14,6 @@ def quadratic(x,a,b,c):
 
 def power_law(x,a,b,c):
     return a*x**b+c
-    
-def movingaverage (values, window):
-    weights = np.repeat(1.0, window)/window
-    sma = np.convolve(values, weights, 'valid')
-    return sma
 
 def scatterplot_fit(X,Y,**kwargs):
     """
