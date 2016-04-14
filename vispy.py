@@ -117,7 +117,7 @@ def three_dimension_scatterplot(X,Y,Z,**kwargs):
     zlabel -- Label for the Z-axis (default "")
     title -- Title for the plot (default "")
     """
-    xlabel, ylabel, zlabel, title = kwargs.get('xlabel',""), kwargs.get('ylabel',""), kwargs.get('zlabel',""), kwargs.get('title',"")
+    xlabel, ylabel, zlabel, xmin, xmax, ymin, ymax, zmin, zmax, title = kwargs.get('xlabel',""), kwargs.get('ylabel',""), kwargs.get('zlabel',""), kwargs.get('xmin',min(X)), kwargs.get('xmax',max(X)), kwargs.get('ymin',min(Y)), kwargs.get('ymax',max(Y)), kwargs.get('zmin',min(Z)), kwargs.get('zmax',max(Z)), kwargs.get('title',"")
     fig = plt.figure()
     fig.patch.set_facecolor('white')
     ax = fig.add_subplot(111, projection='3d')
@@ -126,6 +126,9 @@ def three_dimension_scatterplot(X,Y,Z,**kwargs):
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     ax.set_zlabel(zlabel)
+    ax.set_xlim([xmin,xmax])
+    ax.set_ylim([ymin,ymax])
+    ax.set_zlim([zmin,zmax])
     ax.set_title(title)
     plt.show()
     plt.close()
@@ -144,7 +147,7 @@ def wireframe(X,Y,Z,**kwargs):
     zlabel -- Label for the Z-axis (default "")
     title -- Title for the plot (default "")
     """
-    xlabel, ylabel, zlabel, title = kwargs.get('xlabel',""), kwargs.get('ylabel',""), kwargs.get('zlabel',""), kwargs.get('title',"")
+    xlabel, ylabel, zlabel, xmin, xmax, ymin, ymax, zmin, zmax, title = kwargs.get('xlabel',""), kwargs.get('ylabel',""), kwargs.get('zlabel',""), kwargs.get('xmin',min(X)), kwargs.get('xmax',max(X)), kwargs.get('ymin',min(Y)), kwargs.get('ymax',max(Y)), kwargs.get('zmin',min(Z)), kwargs.get('zmax',max(Z)), kwargs.get('title',"")
     fig = plt.figure()
     fig.patch.set_facecolor('white')
     ax = fig.add_subplot(111, projection='3d')
@@ -170,7 +173,7 @@ def surface(X,Y,Z,**kwargs):
     zlabel -- Label for the Z-axis (default "")
     title -- Title for the plot (default "")
     """
-    xlabel, ylabel, zlabel, title = kwargs.get('xlabel',""), kwargs.get('ylabel',""), kwargs.get('zlabel',""), kwargs.get('title',"")
+    xlabel, ylabel, zlabel, xmin, xmax, ymin, ymax, zmin, zmax, title = kwargs.get('xlabel',""), kwargs.get('ylabel',""), kwargs.get('zlabel',""), kwargs.get('xmin',min(X)), kwargs.get('xmax',max(X)), kwargs.get('ymin',min(Y)), kwargs.get('ymax',max(Y)), kwargs.get('zmin',min(Z)), kwargs.get('zmax',max(Z)), kwargs.get('title',"")
     fig = plt.figure()
     fig.patch.set_facecolor('white')
     ax = fig.add_subplot(111, projection='3d')
